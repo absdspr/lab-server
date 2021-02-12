@@ -1,0 +1,46 @@
+CREATE TABLE IF NOT EXISTS study_group (
+    id int PRIMARY KEY,
+    name text
+);
+
+
+CREATE TABLE IF NOT EXISTS student
+(
+    id             int PRIMARY KEY,
+    surname        text,
+    name           text,
+    second_name    text,
+    study_group_id int REFERENCES study_group (id)
+);
+
+CREATE TABLE IF NOT EXISTS subject (
+    id int PRIMARY KEY ,
+    name text,
+    short_name text
+);
+
+CREATE TABLE IF NOT EXISTS exam_type (
+    id int PRIMARY KEY ,
+    type text
+);
+
+CREATE TABLE IF NOT EXISTS study_plan (
+    id int PRIMARY KEY ,
+    subject_id int REFERENCES subject (id),
+    exam_type_id int REFERENCES exam_type (id)
+);
+
+CREATE TABLE IF NOT EXISTS mark (
+    id int PRIMARY KEY ,
+    name text,
+    value text
+);
+
+CREATE TABLE IF NOT EXISTS journal (
+    id int PRIMARY KEY ,
+    student_id int REFERENCES student (id),
+    study_plan_id int REFERENCES  study_plan (id),
+    in_time bool,
+    count int,
+    mark_id int REFERENCES mark (id)
+);
