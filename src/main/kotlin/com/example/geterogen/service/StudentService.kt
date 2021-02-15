@@ -1,12 +1,10 @@
 package com.example.geterogen.service
 
 import com.example.geterogen.model.Student
-import com.example.geterogen.model.StudyGroup
 import com.example.geterogen.repository.StudentRepository
 import com.example.geterogen.repository.StudyGroupRepository
-import org.slf4j.LoggerFactory
 import org.springframework.stereotype.Service
-import java.util.*
+
 
 @Service
 class StudentService(private val repository: StudentRepository,

@@ -3,7 +3,7 @@ package com.example.geterogen.service
 import com.example.geterogen.model.StudyGroup
 import com.example.geterogen.repository.StudyGroupRepository
 import org.springframework.stereotype.Service
-import java.util.*
+
 
 @Service
 class StudyGroupService(private val repository: StudyGroupRepository) {

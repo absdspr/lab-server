@@ -6,7 +6,7 @@ import com.example.geterogen.model.StudyGroup
 import com.example.geterogen.service.StudyGroupService
 import org.springframework.http.HttpStatus
 import org.springframework.web.bind.annotation.*
-import java.util.*
+
 
 
 @RestController
