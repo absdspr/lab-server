@@ -16,8 +16,9 @@ class StudentController(private val service: StudentService) {
     @GetMapping("/{id}")
     fun getById(@PathVariable id: Int) = service.findById(id)
 
-    @GetMapping("/group/{id}")
-    fun getByGroupId(@PathVariable id: Int) = service.getStudents(id)
+
+//    @GetMapping("/group/{id}")
+//    fun getByGroupId(@PathVariable id: Int) = service.getStudents(id)
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
@@ -26,4 +27,6 @@ class StudentController(private val service: StudentService) {
     @DeleteMapping("/{id}")
     fun delete(@PathVariable id: Int) = service.delete(id)
 
+    @PutMapping("/{id}")
+    fun edit(@PathVariable id: Int, @RequestBody student: Student) = service.edit(id, student)
 }

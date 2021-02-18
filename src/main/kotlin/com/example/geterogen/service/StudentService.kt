@@ -4,6 +4,8 @@ import com.example.geterogen.model.Student
 import com.example.geterogen.repository.StudentRepository
 import com.example.geterogen.repository.StudyGroupRepository
 import org.springframework.stereotype.Service
+import org.springframework.web.client.HttpClientErrorException
+import java.util.*
 
 
 @Service
@@ -37,5 +39,18 @@ class StudentService(private val repository: StudentRepository,
      * Удаление студента
      */
     fun delete(id: Int) = repository.deleteById(id)
+
+    /**
+     * Редактирование информации о студенте
+     */
+    fun edit(id: Int, student: Student): Student{
+        val oldStudent = repository.findById(id).get()
+        oldStudent.name = student.name
+        oldStudent.surname = student.surname
+        oldStudent.secondName = student.secondName
+        oldStudent.group = student.group
+        return repository.save(oldStudent)
+
+    }
 
 }

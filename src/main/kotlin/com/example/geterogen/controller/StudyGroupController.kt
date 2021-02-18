@@ -26,4 +26,7 @@ class StudyGroupController(private val service: StudyGroupService) {
     @DeleteMapping("/{id}")
     fun delete(@PathVariable id: Int) = service.delete(id)
 
+    @PutMapping("/{id}")
+    fun edit(@PathVariable id: Int, @RequestBody group: StudyGroup) = service.edit(id, group)
+
 }

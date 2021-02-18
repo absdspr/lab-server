@@ -1,5 +1,6 @@
 package com.example.geterogen.service
 
+import com.example.geterogen.model.Student
 import com.example.geterogen.model.StudyGroup
 import com.example.geterogen.repository.StudyGroupRepository
 import org.springframework.stereotype.Service
@@ -32,5 +33,15 @@ class StudyGroupService(private val repository: StudyGroupRepository) {
      * Удаление группы
      */
     fun delete(id: Int) = repository.deleteById(id)
+
+    /**
+     * Редактирование информации о группе
+     */
+    fun edit(id: Int, group: StudyGroup): StudyGroup {
+        val oldGroup = repository.findById(id).get()
+        oldGroup.name = group.name
+        return repository.save(oldGroup)
+
+    }
 
 }
