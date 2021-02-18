@@ -7,6 +7,7 @@ import javax.persistence.*
 @Entity
 @Table(name = "study_group")
 class StudyGroup(
+        @Column(unique = true)
         var name: String,
 
         @OneToMany(
