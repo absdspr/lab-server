@@ -1,9 +1,11 @@
 package com.example.geterogen.controller
 
 import com.example.geterogen.model.Student
+import com.example.geterogen.model.StudyGroup
 import com.example.geterogen.service.StudentService
 import org.springframework.http.HttpStatus
 import org.springframework.web.bind.annotation.*
+import java.util.*
 
 
 @RestController
@@ -11,14 +13,16 @@ import org.springframework.web.bind.annotation.*
 class StudentController(private val service: StudentService) {
 
     @GetMapping
-    fun index() = service.findAll()
+    fun index(@RequestParam(required = false) group: String?): Iterable<Student> {
+        group?.let {
+            return service.findByGroup(group)
+        }
+       return service.findAll()
+    }
 
     @GetMapping("/{id}")
     fun getById(@PathVariable id: Int) = service.findById(id)
 
-
-//    @GetMapping("/group/{id}")
-//    fun getByGroupId(@PathVariable id: Int) = service.getStudents(id)
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)

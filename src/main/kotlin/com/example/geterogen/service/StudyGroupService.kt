@@ -1,6 +1,5 @@
 package com.example.geterogen.service
 
-import com.example.geterogen.model.Student
 import com.example.geterogen.model.StudyGroup
 import com.example.geterogen.repository.StudyGroupRepository
 import org.springframework.stereotype.Service
@@ -12,17 +11,13 @@ class StudyGroupService(private val repository: StudyGroupRepository) {
     /**
     * Все группы
     */
-    fun findAll() = repository.findAll()
+    fun findAll(): Iterable<StudyGroup> = repository.findAll()
 
     /**
      * Группа по id
      */
     fun findById(id: Int) = repository.findById(id)
 
-    /**
-     * Студенты в группе по id
-     */
-    fun getStudents(id: Int) = repository.findById(id).get().students
 
     /**
      * Создание группы

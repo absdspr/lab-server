@@ -13,6 +13,6 @@ class Student(
 
         @ManyToOne
         @JoinColumn(name = "study_group_id",)
-        @JsonBackReference
+//        @JsonBackReference
         var group: StudyGroup
 ): BaseEntity<Int>()
