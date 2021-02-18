@@ -2,6 +2,7 @@ package com.example.geterogen.controller
 
 
 import com.example.geterogen.model.Journal
+import com.example.geterogen.model.Mark
 import com.example.geterogen.service.JournalService
 import org.springframework.web.bind.annotation.*
 
@@ -26,4 +27,7 @@ class JournalController(private val service: JournalService) {
 
     @PostMapping()
     fun create(@RequestBody journal: Journal) = service.create(journal)
+
+    @PatchMapping("/{id}")
+    fun patchMark(@PathVariable id: Int, @RequestBody mark: Mark) = service.updateMark(mark, id)
 }
