@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*
 
 @RestController
 @RequestMapping("/journal")
+@CrossOrigin
 class JournalController(private val service: JournalService) {
 
     @GetMapping
