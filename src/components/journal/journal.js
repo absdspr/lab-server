@@ -51,8 +51,12 @@ export default function Journal(props) {
                 {journal.map((row, i) => {
                     const student = row.student
                     const studentName = `${student.surname} ${student.name} ${student.secondName}`
+                    const isFailed = row.mark.value == 2
+                    const rowStyle = {
+                        backgroundColor: isFailed ? "#f44336" : null
+                    }
                     return (
-                        <tr key={row.id}>
+                        <tr key={row.id} style={rowStyle}>
                             <td>{i + 1}</td>
                             <td>{studentName}</td>
                             <td>{row.student.group.name}</td>
