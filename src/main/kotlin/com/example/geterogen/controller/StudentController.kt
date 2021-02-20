@@ -10,6 +10,7 @@ import java.util.*
 
 @RestController
 @RequestMapping("/student")
+@CrossOrigin
 class StudentController(private val service: StudentService) {
 
     @GetMapping

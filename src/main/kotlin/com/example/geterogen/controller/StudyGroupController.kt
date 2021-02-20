@@ -1,7 +1,6 @@
 package com.example.geterogen.controller
 
 
-import com.example.geterogen.model.Student
 import com.example.geterogen.model.StudyGroup
 import com.example.geterogen.service.StudyGroupService
 import org.springframework.http.HttpStatus
@@ -11,6 +10,7 @@ import org.springframework.web.bind.annotation.*
 
 @RestController
 @RequestMapping("/group")
+@CrossOrigin
 class StudyGroupController(private val service: StudyGroupService) {
 
     @GetMapping
