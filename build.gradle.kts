@@ -17,6 +17,8 @@ java.sourceCompatibility = JavaVersion.VERSION_11
 repositories {
     mavenCentral()
     jcenter()
+    mavenLocal()
+
 }
 
 dependencies {
@@ -24,6 +26,8 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-starter-data-jpa")
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
+    implementation("net.progruzovik.bus:bus-datasource-spring-jdbc:1.0-DEAN")
+    implementation("net.progruzovik.bus:bus-messaging-spring-rest:1.0-DEAN")
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
     implementation("org.springdoc:springdoc-openapi-ui:1.5.4")
     runtimeOnly("org.postgresql:postgresql")

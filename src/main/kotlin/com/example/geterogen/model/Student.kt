@@ -11,7 +11,7 @@ class Student(
         var surname: String,
         var secondName: String,
 
-        @ManyToOne
+        @ManyToOne()
         @JoinColumn(name = "study_group_id",)
 //        @JsonBackReference
         var group: StudyGroup
