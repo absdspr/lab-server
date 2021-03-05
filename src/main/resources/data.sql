@@ -53,8 +53,3 @@ INSERT INTO mark (id, name, value) VALUES
 (6, 'Незачет', 'н') ON CONFLICT DO NOTHING;
 INSERT INTO mark (id, name, value) VALUES
 (7, 'Неявка', '') ON CONFLICT DO NOTHING;
-
-INSERT INTO study_group (id, name) VALUES
-(1, 'ИКБО-11-17') ON CONFLICT DO NOTHING;
-INSERT INTO study_group (id, name) VALUES
-(2, 'ИКБО-12-17') ON CONFLICT DO NOTHING;
