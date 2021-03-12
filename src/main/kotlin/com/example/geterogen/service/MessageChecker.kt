@@ -15,7 +15,6 @@ internal class MessageChecker(private val restReceiver: RestReceiver) {
 
     @Scheduled(fixedDelay = 3000)
     @Synchronized
-    @Throws(IOException::class)
     fun checkMessages() {
         lastCheckTime = restReceiver.receiveMessages(lastCheckTime)
     }

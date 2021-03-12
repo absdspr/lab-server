@@ -53,3 +53,30 @@ INSERT INTO mark (id, name, value) VALUES
 (6, 'Незачет', 'н') ON CONFLICT DO NOTHING;
 INSERT INTO mark (id, name, value) VALUES
 (7, 'Неявка', '') ON CONFLICT DO NOTHING;
+
+-- INSERT INTO student_local (id, name, second_name, surname, study_group_id)
+-- VALUES (228, 'Егор', 'Кирилл', 'Работать', 1) ON CONFLICT DO NOTHING;
+--
+-- INSERT INTO student_local (id, name, second_name, surname, study_group_id)
+-- VALUES (322, 'Егор', 'Кирилл', 'Спать', 1) ON CONFLICT DO NOTHING;
+--
+-- INSERT INTO student_local (id, name, second_name, surname, study_group_id)
+-- VALUES (1337, 'Егор', 'Пробная', 'Работать', 1) ON CONFLICT DO NOTHING;
+--
+-- INSERT INTO student_local (id, name, second_name, surname, study_group_id)
+-- VALUES (1337228, 'Пиночет', 'Чили', 'Вертолет', 1) ON CONFLICT DO NOTHING;
+
+
+-- INSERT INTO journal.public.journal(count, in_time, mark_id, student_id, study_plan_id) VALUES
+-- (0, true, 1, 228, 1) ON CONFLICT DO NOTHING ;
+-- INSERT INTO journal.public.journal(count, in_time, mark_id, student_id, study_plan_id) VALUES
+-- (0, true, 1, 228, 2) ON CONFLICT DO NOTHING ;
+-- INSERT INTO journal.public.journal(count, in_time, mark_id, student_id, study_plan_id) VALUES
+-- (0, true, 1, 228, 3) ON CONFLICT DO NOTHING ;
+
+INSERT INTO journal.public.journal(count, in_time, mark_id, student_id, study_plan_id) VALUES
+(0, true, 1, 322, 2) ON CONFLICT DO NOTHING ;
+INSERT INTO journal.public.journal(count, in_time, mark_id, student_id, study_plan_id) VALUES
+(0, true, 1, 322, 2) ON CONFLICT DO NOTHING ;
+INSERT INTO journal.public.journal(count, in_time, mark_id, student_id, study_plan_id) VALUES
+(0, true, 1, 322, 2) ON CONFLICT DO NOTHING ;
